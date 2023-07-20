@@ -1,57 +1,62 @@
 function getComputerChoice() {
-  const choices = ["Rock", "Paper", "Cisor"];
+  const choices = ["rock", "paper", "cisor"];
   const randomIndex = Math.floor(Math.random() * choices.length);
   return choices[randomIndex];
 }
 
-var computerSelection = getComputerChoice();
-console.log(computerSelection);
-
-var playerInput = "ROCK";
+const playerInput = "ROCK";
 const playerSelection = playerInput.toLowerCase();
 
 function computerPlayRock(computerSelection, playerSelection) {
 
-    if (playerSelection == "Cisor") {
+    if (playerSelection == "cisor") {
       console.log("You loose, " + computerSelection + " beat " + playerSelection);
-    } else if (playerSelection == "Paper") {
+    } else if (playerSelection == "paper") {
       console.log("You win, " + playerSelection + " beat " + computerSelection);
+    } else if (playerSelection == "rock") {
+      console.log("Equality, play another round!");
     }
 }
 
 function computerPlayPaper(computerSelection, playerSelection) {
 
-    if (playerSelection == "Cisor") {
+    if (playerSelection == "cisor") {
       console.log("You win, " + playerSelection + " beat " + computerSelection);
-    } else if (playerSelection == "Rock") {
+    } else if (playerSelection == "rock") {
       console.log("You loose, " + computerSelection + " beat " + playerSelection);
+    } else if (playerSelection == "paper") {
+      console.log("Equality, play another round!");
     }
 }
 
 function computerPlayCisor(computerSelection, playerSelection) {
 
-    if (playerSelection == "Paper") {
+    if (playerSelection == "paper") {
       console.log("You loose, " + computerSelection + " beat " + playerSelection);
-    } else if (playerSelection == "Rock") {
+    } else if (playerSelection == "rock") {
       console.log("You win, " + playerSelection + " beat " + computerSelection);
+    } else if (playerSelection == "cisor") {
+      console.log("Equality, play another round!");
     }
 }
 
-function playRound(playerSelection, computerSelection) {
 
-  getComputerChoice();
+function playRound(choices) {
+
+  let computerSelection = getComputerChoice(choices);
   console.log(computerSelection);
-
-      if (computerSelection == "Rock") {
-        computerPlayRock();
-      } else if (computerSelection == "Paper") {
-        computerPlayPaper();
-      } else if (computerSelection == "Cisor") {
-        computerPlayCisor();
-      } else if (computerSelection == playerSelection) {
-        console.log("Equality, play another round!");
+  console.log(playerSelection);
+  
+      if (computerSelection == "rock") {
+        computerPlayRock(computerSelection, playerSelection);
+      } else if (computerSelection == "paper") {
+        computerPlayPaper(computerSelection, playerSelection);
+      } else if (computerSelection == "cisor") {
+        computerPlayCisor(computerSelection, playerSelection);
       }
-
 }
 
-  playRound(playerSelection, computerSelection);
+  playRound(getComputerChoice(),
+  computerPlayRock(),
+  computerPlayPaper(),
+  computerPlayCisor());
