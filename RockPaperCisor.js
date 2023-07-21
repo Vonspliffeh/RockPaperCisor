@@ -22,39 +22,39 @@ var computerScore = 0;
 function computerPlayRock(computerSelection, playerSelection) {
 
     if (playerSelection == "cisor") {
-      console.log("You loose, " + computerSelection + " beat " + playerSelection);
+      alert("You loose, " + computerSelection + " beat " + playerSelection);
       computerScore++;
     } else if (playerSelection == "paper") {
-      console.log("You win, " + playerSelection + " beat " + computerSelection);
+      alert("You win, " + playerSelection + " beat " + computerSelection);
       playerScore++;
     } else if (playerSelection == "rock") {
-      console.log("Equality, play another round!");
+      alert("Equality, play another round!");
     }
 }
 
 function computerPlayPaper(computerSelection, playerSelection) {
 
     if (playerSelection == "cisor") {
-      console.log("You win, " + playerSelection + " beat " + computerSelection);
+      alert("You win, " + playerSelection + " beat " + computerSelection);
       playerScore++;
     } else if (playerSelection == "rock") {
-      console.log("You loose, " + computerSelection + " beat " + playerSelection);
+      alert("You loose, " + computerSelection + " beat " + playerSelection);
       computerScore++;
     } else if (playerSelection == "paper") {
-      console.log("Equality, play another round!");
+      alert("Equality, play another round!");
     }
 }
 
 function computerPlayCisor(computerSelection, playerSelection) {
 
     if (playerSelection == "paper") {
-      console.log("You loose, " + computerSelection + " beat " + playerSelection);
+      alert("You loose, " + computerSelection + " beat " + playerSelection);
       computerScore++;
     } else if (playerSelection == "rock") {
-      console.log("You win, " + playerSelection + " beat " + computerSelection);
+      alert("You win, " + playerSelection + " beat " + computerSelection);
       playerScore++;
     } else if (playerSelection == "cisor") {
-      console.log("Equality, play another round!");
+      alert("Equality, play another round!");
     }
 }
 
@@ -89,6 +89,10 @@ function game() {
       computerPlayPaper(),
       computerPlayCisor());
       i++;
+    } if (playerScore > computerScore) {
+      alert("Well play! You win " + playerScore + "to " + computerScore + "!")
+    } else if (playerScore < computerScore) {
+      alert("Pity! You loose " + playerScore + "to " + computerScore + "!")
     }
   }
 
