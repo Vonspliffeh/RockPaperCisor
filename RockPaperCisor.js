@@ -4,7 +4,14 @@ function getComputerChoice() {
   return choices[randomIndex];
 }
 
-const playerInput = "ROCK";
+const playerInput = prompt("Let's play! rock, paper or cisor?!");
+
+  if (playerInput !== "rock" || "paper" || "cisor") {
+    console.log("Only rock, paper or cisor is accept!");
+  } else if (playerInput === null) {
+    console.log("you have canceled!");
+  } 
+  
 const playerSelection = playerInput.toLowerCase();
 
 var playerScore = 0;
@@ -52,17 +59,19 @@ function computerPlayCisor(computerSelection, playerSelection) {
 
 function playRound(choices) {
 
-  let computerSelection = getComputerChoice(choices);
-  console.log(computerSelection);
-  console.log(playerSelection);
+  prompt();
+
+    let computerSelection = getComputerChoice(choices);
+    console.log(computerSelection);
+    console.log(playerSelection);
   
-      if (computerSelection == "rock") {
-        computerPlayRock(computerSelection, playerSelection);
-      } else if (computerSelection == "paper") {
-        computerPlayPaper(computerSelection, playerSelection);
-      } else if (computerSelection == "cisor") {
-        computerPlayCisor(computerSelection, playerSelection);
-      } console.log("Computer Score = " + computerScore, "Player Score = " + playerScore);
+        if (computerSelection == "rock") {
+          computerPlayRock(computerSelection, playerSelection);
+        } else if (computerSelection == "paper") {
+          computerPlayPaper(computerSelection, playerSelection);
+        } else if (computerSelection == "cisor") {
+          computerPlayCisor(computerSelection, playerSelection);
+        } console.log("Computer Score = " + computerScore, "Player Score = " + playerScore);
 }
 
 
