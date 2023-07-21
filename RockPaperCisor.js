@@ -1,9 +1,11 @@
+// random computer play.
 function getComputerChoice() {
   const choices = ["rock", "paper", "cisor"];
   const randomIndex = Math.floor(Math.random() * choices.length);
   return choices[randomIndex];
 }
 
+// get player input. 
 const playerInput = prompt("Let's play! rock, paper or cisor?!");
 
   if (playerInput !== "rock" || "paper" || "cisor") {
@@ -11,7 +13,7 @@ const playerInput = prompt("Let's play! rock, paper or cisor?!");
   } else if (playerInput === null) {
     console.log("you have canceled!");
   } 
-  
+
 const playerSelection = playerInput.toLowerCase();
 
 var playerScore = 0;
@@ -57,6 +59,7 @@ function computerPlayCisor(computerSelection, playerSelection) {
 }
 
 
+// complete playing round function.
 function playRound(choices) {
 
   prompt();
@@ -75,6 +78,7 @@ function playRound(choices) {
 }
 
 
+// complete playing game with five rounds.
 function game() {
 
   let i = 0;
