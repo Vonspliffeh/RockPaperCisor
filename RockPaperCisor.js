@@ -56,7 +56,19 @@ function playRound(choices) {
       }
 }
 
-  playRound(getComputerChoice(),
-  computerPlayRock(),
-  computerPlayPaper(),
-  computerPlayCisor());
+
+function game() {
+
+  let i = 0;
+
+    while (i < 5) {
+      playRound(getComputerChoice(),
+      computerPlayRock(),
+      computerPlayPaper(),
+      computerPlayCisor());
+      console.log(i);
+      i++;
+    }
+  }
+
+game();
