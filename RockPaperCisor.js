@@ -6,15 +6,24 @@ function getComputerChoice() {
 }
 
 // get player input. 
-const playerInput = prompt("Let's play! rock, paper or cisor?!");
+function getPlayerInput() {
 
-  if (playerInput !== "rock" || "paper" || "cisor") {
-    console.log("Only rock, paper or cisor is accept!");
-  } else if (playerInput === null) {
-    console.log("you have canceled!");
-  } 
+  const playerInput = prompt("Let's play! rock, paper or cisor?!");
 
-const playerSelection = playerInput.toLowerCase();
+    if (playerInput === null) {
+      alert("you have canceled!");
+      return null;
+    }
+
+  const playerSelection = playerInput.toLowerCase();
+
+    if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "cisor") {
+      alert("Only rock, paper or cisor is accept!");
+      return null;
+    }
+
+    return playerSelection;
+} 
 
 var playerScore = 0;
 var computerScore = 0;
@@ -62,19 +71,20 @@ function computerPlayCisor(computerSelection, playerSelection) {
 // complete playing round function.
 function playRound(choices) {
 
-  prompt();
+  let playerSelection = getPlayerInput();
 
-    let computerSelection = getComputerChoice(choices);
-    console.log(computerSelection);
-    console.log(playerSelection);
+  let computerSelection = getComputerChoice(choices);
+
+  console.log(computerSelection);
+  console.log(playerSelection);
   
-        if (computerSelection == "rock") {
-          computerPlayRock(computerSelection, playerSelection);
-        } else if (computerSelection == "paper") {
-          computerPlayPaper(computerSelection, playerSelection);
-        } else if (computerSelection == "cisor") {
-          computerPlayCisor(computerSelection, playerSelection);
-        } console.log("Computer Score = " + computerScore, "Player Score = " + playerScore);
+      if (computerSelection == "rock") {
+        computerPlayRock(computerSelection, playerSelection);
+      } else if (computerSelection == "paper") {
+        computerPlayPaper(computerSelection, playerSelection);
+      } else if (computerSelection == "cisor") {
+        computerPlayCisor(computerSelection, playerSelection);
+      } console.log("Computer Score = " + computerScore, "Player Score = " + playerScore);
 }
 
 
@@ -90,9 +100,9 @@ function game() {
       computerPlayCisor());
       i++;
     } if (playerScore > computerScore) {
-      alert("Well play! You win " + playerScore + "to " + computerScore + "!")
+      alert("Well play! You win " + playerScore + " to " + computerScore + "!")
     } else if (playerScore < computerScore) {
-      alert("Pity! You loose " + playerScore + "to " + computerScore + "!")
+      alert("Pity! You loose " + playerScore + " to " + computerScore + "!")
     }
   }
 
