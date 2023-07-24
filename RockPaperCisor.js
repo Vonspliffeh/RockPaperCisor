@@ -74,6 +74,10 @@ function playRound() {
   let playerSelection = getPlayerInput();
   let computerSelection = getComputerChoice();
 
+  if (playerSelection === null) {
+    getPlayerInput();
+  }
+
   console.log("Computer plays " + computerSelection);
   console.log("Player plays " + playerSelection);
 
