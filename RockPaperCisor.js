@@ -31,39 +31,39 @@ let computerScore = 0;
 function computerPlayRock(computerSelection, playerSelection) {
 
   if (playerSelection == "cisor") {
-    alert("You loose, " + computerSelection + " beat " + playerSelection);
+    alert("Computer plays " + computerSelection + ".\nYou loose, " + computerSelection + " beat " + playerSelection + ".");
     computerScore++;
   } else if (playerSelection == "paper") {
-    alert("You win, " + playerSelection + " beat " + computerSelection);
+    alert("Computer plays " + computerSelection + ".\nYou win, " + playerSelection + " beat " + computerSelection + ".");
     playerScore++;
   } else if (playerSelection == "rock") {
-    alert("Equality, play another round!");
+    alert("Computer plays " + computerSelection + ".\nEquality, play another round!");
   }
 }
 
 function computerPlayPaper(computerSelection, playerSelection) {
 
   if (playerSelection == "cisor") {
-    alert("You win, " + playerSelection + " beat " + computerSelection);
+    alert("Computer plays " + computerSelection + ".\nYou win, " + playerSelection + " beat " + computerSelection + ".");
     playerScore++;
   } else if (playerSelection == "rock") {
-    alert("You loose, " + computerSelection + " beat " + playerSelection);
+    alert("Computer plays " + computerSelection + ".\nYou loose, " + computerSelection + " beat " + playerSelection + ".");
     computerScore++;
   } else if (playerSelection == "paper") {
-    alert("Equality, play another round!");
+    alert("Computer plays " + computerSelection + ".\nEquality, play another round!");
   }
 }
 
 function computerPlayCisor(computerSelection, playerSelection) {
 
   if (playerSelection == "paper") {
-    alert("You loose, " + computerSelection + " beat " + playerSelection);
+    alert("Computer plays " + computerSelection + ".\nYou loose, " + computerSelection + " beat " + playerSelection + ".");
     computerScore++;
   } else if (playerSelection == "rock") {
-    alert("You win, " + playerSelection + " beat " + computerSelection);
+    alert("Computer plays " + computerSelection + ".\nYou win, " + playerSelection + " beat " + computerSelection + ".");
     playerScore++;
   } else if (playerSelection == "cisor") {
-    alert("Equality, play another round!");
+    alert("Computer plays " + computerSelection + ".\nEquality, play another round!");
   }
 }
 
@@ -72,7 +72,6 @@ function computerPlayCisor(computerSelection, playerSelection) {
 function playRound() {
 
   let playerSelection = getPlayerInput();
-
   let computerSelection = getComputerChoice();
 
   console.log("Computer plays " + computerSelection);
